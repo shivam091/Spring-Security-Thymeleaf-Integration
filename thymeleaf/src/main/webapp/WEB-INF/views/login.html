@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<meta charset="utf-8"/>-->
+
+    <title>SimpleWebApp</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="col-md-offset-3 col-md-4">
+        <div id="legend">
+            <legend class="">Please Sign in</legend>
+        </div>
+
+        <p th:if="${error}" th:text="${error}" class="bg-danger"/>
+
+        <p th:if="${logout}" th:text="${logout}" class="bg-info"/>
+
+        <p th:if="${registered}" th:text="${registered}" class="bg-success"/>
+
+        <form class="form-signin" role="form" th:action="@{/j_spring_security_check}" method="post">
+
+            <input type="text" id="email" name="email"  class="form-control" placeholder="Email address"/>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"/>
+            <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+
+        </form>
+
+        <a class="text-primary" th:href="@{/registration}"> Register </a>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<meta charset="utf-8"/>-->
+
+    <title>SimpleWebApp</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/resources/js/jquery.js" />
+</head>
+
+<body>
+
+<div class="container">
+    <div class="col-md-offset-3 col-md-5">
+
+        <form class="form-horizontal" th:action="@{/addUser}" method="POST">
+
+            <fieldset>
+                <div id="legend">
+                    <legend class="">Please fill information below:</legend>
+                </div>
+                <div class="control-group">
+                    <!-- Username -->
+                    <label class="control-label" for="name">Your Name</label>
+
+                    <div class="controls">
+                        <div class="form-group has-error" th:if="${#fields.hasErrors('userForm.name')}">
+                            <label class="control-label" th:text="${#fields.errors('userForm.name')}" />
+                        </div>
+                        <input type="text" class="form-control" th:field="*{userForm.name}"/>
+
+                        <p class="help-block">Please enter your first name</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- E-mail -->
+                    <label class="control-label" for="email">E-mail</label>
+
+                    <div class="controls">
+                        <div class="form-group has-error" th:if="${#fields.hasErrors('userForm.email')}">
+                            <label class="control-label" th:text="${#fields.errors('userForm.email')}" />
+                        </div>
+                        <input type="text" class="form-control" th:field="*{userForm.email}" />
+
+                        <p class="help-block">Please provide your E-mail</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Password-->
+                    <label class="control-label" for="confirmPassword">Password</label>
+
+                    <div class="controls">
+                        <div class="form-group has-error" th:if="${#fields.hasErrors('userForm.confirmPassword')}">
+                            <label class="control-label" th:text="${#fields.errors('userForm.confirmPassword')}" />
+                        </div>
+                        <input type="password" class="form-control" th:field="*{userForm.confirmPassword}"/>
+
+                        <p class="help-block">Password should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Password -->
+                    <label class="control-label" for="password">Password (Confirm)</label>
+
+                    <div class="controls">
+                        <div class="form-group has-error" th:if="${#fields.hasErrors('userForm.password')}">
+                            <label class="control-label" th:text="${#fields.errors('userForm.password')}" />
+                        </div>
+                        <input type="password" class="form-control" th:field="*{userForm.password}" />
+
+                        <p class="help-block">Please confirm password</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <button class="btn btn-success" type="submit">Register</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>
