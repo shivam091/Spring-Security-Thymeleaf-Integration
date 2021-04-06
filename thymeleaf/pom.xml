@@ -42,7 +42,7 @@
         <logback.version>1.0.13</logback.version>
         <mail.version>1.4.7</mail.version>
         <activation.version>1.1.1</activation.version>
-        <spring.version>4.0.5.RELEASE</spring.version>
+        <spring.version>5.3.5</spring.version>
         <junit.version>4.11</junit.version>
         <spring.security.version>3.2.4.RELEASE</spring.security.version>
         <tomcat.jdbc.version>7.0.54</tomcat.jdbc.version>
